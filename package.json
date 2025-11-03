@@ -1,0 +1,95 @@
+{
+  "name": "conjura",
+  "version": "0.3.0",
+  "description": "KazVizian universal fetch utilities with one-time baseURL config for browser and SSR.",
+  "license": "MIT",
+  "homepage": "https://github.com/kazvizian/conjura",
+  "author": {
+    "name": "KazViz",
+    "email": "kaz@kazviz.com",
+    "url": "https://kazviz.com"
+  },
+  "bugs": {
+    "url": "https://github.com/kazvizian/conjura/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kazvizian/conjura.git"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "bun run build",
+    "lint": "echo 'no lint configured'",
+    "postinstall": "bun lefthook install"
+  },
+  "dependencies": {
+    "derbis": "^1.0.1"
+  },
+  "packageManager": "bun@1.0.0",
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "kazvizian",
+    "kazviz",
+    "conjura",
+    "data-fetcher",
+    "fetch",
+    "http",
+    "javascript",
+    "typescript",
+    "library",
+    "web"
+  ],
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.mjs"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "^19.8.1",
+    "@commitlint/cli": "^19.8.1",
+    "lefthook": "^1.13.6",
+    "tsdown": "^0.15.12",
+    "typescript": "^5.9.3"
+  },
+  "tsdown": {
+    "entry": [
+      "src/index.ts"
+    ],
+    "format": [
+      "esm",
+      "cjs"
+    ],
+    "dts": true,
+    "sourcemap": true,
+    "clean": true,
+    "treeshake": true,
+    "target": "es2019",
+    "minify": false
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
