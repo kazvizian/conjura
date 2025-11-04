@@ -70,7 +70,7 @@ configureConjura({ baseURL: "https://api.example.com" })
 ### 2. Global hint (before your bundle)
 
 ```html
-<script>window.__SIGIL_BE_BASE_URL = "https://api.example.com"</script>
+<script>window.__CONJURA_BE_BASE_URL = "https://api.example.com"</script>
 ```
 
 ### 3. Environment variables
@@ -78,7 +78,7 @@ configureConjura({ baseURL: "https://api.example.com" })
 Conjura looks in order:
 
 ```
-SIGIL_BASE_URL, API_BASE_URL,
+CONJURA_BASE_URL, API_BASE_URL,
 VITE_BE_CORE_URL, VITE_BE_URL,
 VITE_API_BASE_URL, VITE_BASE_URL
 ```
